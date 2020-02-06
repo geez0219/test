@@ -35,6 +35,7 @@ pipeline {
                 # which python
                 # which pip
                 
+                echo $PATH
             '''
         }
     }
