@@ -31,7 +31,8 @@ pipeline {
 
                 . $ANACONDA_DIR/etc/profile.d/conda.sh
                 conda activate $JENKINS_ENV_DIR/$ENV_NAME
-                python -m pytest
+                which python
+                which pip
             '''
         }
     }
