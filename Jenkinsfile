@@ -9,13 +9,14 @@ pipeline {
                 conda create --name jenkins-env python=3.6 
             '''
         }
-        
+    }
+    
+    stage('Test2') {
         steps{
             sh '''
                 echo $PATH
             '''
         }
     }
-
   }
 }
