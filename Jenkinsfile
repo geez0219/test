@@ -31,9 +31,9 @@ pipeline {
                 echo $PATH
                 
                 . $ANACONDA_DIR/etc/profile.d/conda.sh
-                conda activate $JENKINS_ENV_DIR/$ENV_NAME
-                which python
-                which pip
+                # conda activate $JENKINS_ENV_DIR/$ENV_NAME
+                # which python
+                # which pip
                 
             '''
         }
