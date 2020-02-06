@@ -6,7 +6,7 @@ pipeline {
             sh '''
               ANACONDA_DIR=/home/ubuntu/anaconda3
               JENKINS_ENV_DIR=/var/lib/jenkins/.conda/envs
-              ENV_NAME=pr_env
+              export ENV_NAME=pr_env
 
               export PATH=$ANACONDA_DIR/bin:$PATH
               if [ ! -d "$JENKINS_ENV_DIR/$ENV_NAME" ]; then
@@ -16,8 +16,7 @@ pipeline {
               . $ANACONDA_DIR/etc/profile.d/conda.sh
               conda activate $ENV_NAME
 
-              pip install pytest numpy nibabel pydicom tensorflow-gpu==2.0.0 twine ipython ipykernel
-              pip install -e .
+              pip install pytest 
             '''
         }
     }
@@ -25,7 +24,7 @@ pipeline {
     stage('Test2') {
         steps{
             sh '''
-                echo $PATH
+                echo $ENV_NAME
             '''
         }
     }
