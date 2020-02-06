@@ -4,7 +4,7 @@ pipeline {
     stage('Test') {
         steps {
             sh '''
-                echo hello world
+                echo $PATH
             '''
         }
     }
