@@ -10,7 +10,7 @@ pipeline {
             
             . $ANACONDA_DIR/etc/profile.d/conda.sh
             if [ ! -d "$JENKINS_ENV_DIR/$ENV_NAME" ]; then
-                #conda create --name $ENV_NAME python=3.6 -y
+                conda create --name $ENV_NAME python=3.6 -y
             fi
             conda activate $JENKINS_ENV_DIR/$ENV_NAME 
             which python
