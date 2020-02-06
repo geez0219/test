@@ -3,14 +3,7 @@ pipeline {
   stages {
     stage('Test') {
         steps {
-            sh '''
-                export PATH=/home/ubuntu/anaconda3/bin:$PATH
-                echo $PATH
-                conda create --name jenkins-env python=3.6 
-                . /home/ubuntu/anaconda3/etc/profile.d/conda.sh
-                conda activate jenkins-env
-                which python
-            '''
+            sh './install_dependency.sh'
         }
     }
     
@@ -18,7 +11,6 @@ pipeline {
         steps{
             sh '''
                 echo $PATH
-     
             '''
         }
     }
