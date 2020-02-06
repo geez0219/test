@@ -28,11 +28,13 @@ pipeline {
                 ANACONDA_DIR=/home/ubuntu/anaconda3
                 JENKINS_ENV_DIR=/var/lib/jenkins/.conda/envs
                 ENV_NAME=pr_env
-
+                echo $PATH
+                
                 . $ANACONDA_DIR/etc/profile.d/conda.sh
                 conda activate $JENKINS_ENV_DIR/$ENV_NAME
                 which python
                 which pip
+                
             '''
         }
     }
