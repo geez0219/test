@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         sh '''
-            ANACONDA_DIR=/home/ec2-user/anaconda3
+            ANACONDA_DIR=/home/ubuntu/anaconda3
             JENKINS_ENV_DIR=/var/lib/jenkins/.conda/envs
             ENV_NAME=pr_env
 
@@ -25,7 +25,7 @@ pipeline {
     stage('Test') {
         steps {
             sh '''
-                ANACONDA_DIR=/home/ec2-user/anaconda3
+                ANACONDA_DIR=/home/ubuntu/anaconda3
                 JENKINS_ENV_DIR=/var/lib/jenkins/.conda/envs
                 ENV_NAME=pr_env
 
